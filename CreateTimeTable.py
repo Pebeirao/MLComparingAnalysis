@@ -40,7 +40,7 @@ for col in predictorDataSet.columns:
             # print(end - start)
             meanvalue.append(end - start)
 
-        values.append(sum(meanvalue)/2)
+        values.append(sum(meanvalue)/100)
         
     coldict[len(colIx)] = values
     
