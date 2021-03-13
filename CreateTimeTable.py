@@ -28,8 +28,8 @@ for col in predictorDataSet.columns:
     for ter in range(1,4):
         #for each 1/3 of the records to predict
         meanvalue = []
-        for x in range(0, 2):
-            # Run the predictor 10000 values to have a mean value 
+        for x in range(0, 100):
+            # Run the predictor 100 values to have a mean value 
 
             predictorData = predictorDataSet.loc[0:ter*(len(predictorDataSet)/3),colIx]
             target = targetValue.loc[0:ter*(len(targetValue)/3)]
