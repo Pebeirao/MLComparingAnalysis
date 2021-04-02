@@ -35,17 +35,17 @@ for col in predictorDataSet.columns:
             target = targetValue.loc[0:ter*(len(targetValue)/3)]
             
             start = time.time()
-            clf = LogisticRegression(random_state=0).fit(predictorData, target)
+            clf = LogisticRegression(random_state=0, n_jobs=-1).fit(predictorData, target)
             end = time.time()
-            # print(end - start)
+            # print()
             meanvalue.append(end - start)
 
         values.append(sum(meanvalue)/100)
         
     coldict[len(colIx)] = values
     
-AttTimeResultsTable = pd.Dataframe.from_dict(coldict, orient='index')      
-AttTimeResultsTable.to_csv("AttTimeResultsTable.csv")
+AttTimeResultsTable = pd.DataFrame.from_dict(coldict, orient='index')      
+AttTimeResultsTable.to_csv("ScoreATTTable.csv")
     
 
 
